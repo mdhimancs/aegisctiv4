@@ -1,0 +1,6 @@
+{
+  "name": "Aegis Cyber Threat Intelligence",
+  "description": "Continuous threat exposure management (CTEM), EPSS exploit likelihood rating, CISA KEV correlation, and AI-directed patch verification.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

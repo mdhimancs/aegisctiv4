@@ -1,64 +1,28 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
   <defs>
-    <!-- Deep cyber crimson to electric ruby gradient -->
-    <linearGradient id="aegisRed" x1="15%" y1="0%" x2="85%" y2="100%">
-      <stop offset="0%" stop-color="#ff2e54" />
-      <stop offset="50%" stop-color="#e11d48" />
-      <stop offset="100%" stop-color="#991b1b" />
-    </linearGradient>
-
-    <!-- Left tactical facet lighting -->
-    <linearGradient id="facetLight" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.32" />
-      <stop offset="80%" stop-color="#ffffff" stop-opacity="0.06" />
-      <stop offset="100%" stop-color="#ffffff" stop-opacity="0" />
-    </linearGradient>
-
-    <!-- Right tactical facet shadow -->
-    <linearGradient id="facetShadow" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#000000" stop-opacity="0" />
-      <stop offset="100%" stop-color="#450a0a" stop-opacity="0.4" />
-    </linearGradient>
-
-    <!-- Subtle cyber glow rim -->
-    <linearGradient id="rimGlow" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#ffe4e6" />
-      <stop offset="60%" stop-color="#fda4af" />
-      <stop offset="100%" stop-color="#f43f5e" />
-    </linearGradient>
-
-    <filter id="tabShadow" x="-20%" y="-20%" width="140%" height="140%">
-      <feDropShadow dx="0" dy="1.5" stdDeviation="1.2" flood-color="#020617" flood-opacity="0.85" />
+    <!-- Soft shadow matching shadow-md -->
+    <filter id="badgeShadow" x="-10%" y="-10%" width="125%" height="125%">
+      <feDropShadow dx="0" dy="1.5" stdDeviation="1.2" flood-color="#000000" flood-opacity="0.35" />
     </filter>
   </defs>
 
-  <!-- Base Dark Outline Shield for Universal Contrast on Light & Dark Tabs -->
-  <path d="M16 1.4 L28.2 5.6 C28.2 17.6 22.2 25.8 16 30.6 C9.8 25.8 3.8 17.6 3.8 5.6 Z"
-        fill="#090d16" filter="url(#tabShadow)" />
+  <!-- Website Header Container: w-8 h-8 rounded-lg bg-red-600 border border-red-500/30 -->
+  <rect x="1" y="1" width="30" height="30" rx="7.5" ry="7.5"
+        fill="#dc2626"
+        stroke="#ef4444"
+        stroke-opacity="0.35"
+        stroke-width="1"
+        filter="url(#badgeShadow)" />
 
-  <!-- Primary Aegis Shield Body -->
-  <path d="M16 2.8 L26.8 6.5 C26.8 16.8 21.4 24.5 16 28.8 C10.6 24.5 5.2 16.8 5.2 6.5 Z"
-        fill="url(#aegisRed)" stroke="url(#rimGlow)" stroke-width="0.9" stroke-linejoin="round" />
-
-  <!-- Left Tactical 3D Bevel -->
-  <path d="M16 2.8 L5.2 6.5 C5.2 16.8 10.6 24.5 16 28.8 Z"
-        fill="url(#facetLight)" />
-
-  <!-- Right Tactical Shadow -->
-  <path d="M16 2.8 L26.8 6.5 C26.8 16.8 21.4 24.5 16 28.8 Z"
-        fill="url(#facetShadow)" />
-
-  <!-- Center Divide Seam -->
-  <line x1="16" y1="2.8" x2="16" y2="28.5" stroke="#ffffff" stroke-width="0.5" stroke-opacity="0.35" />
-
-  <!-- Center Threat Alert Core: High-Visibility White Marker -->
-  <!-- Exclamation Upper Stem: Aggressive, crisp cybersecurity wedge -->
-  <path d="M14.2 9.0 L17.8 9.0 L17.2 17.6 L14.8 17.6 Z"
-        fill="#ffffff" />
-
-  <!-- Exclamation Lower Marker: Bold white node -->
-  <circle cx="16" cy="21.6" r="1.75" fill="#ffffff" />
-
-  <!-- Top Tactical Node Accent -->
-  <polygon points="16,3.6 17.2,5.2 16,6.2 14.8,5.2" fill="#ffffff" opacity="0.9" />
+  <!-- Lucide ShieldAlert: w-4 h-4 text-white (centered, stroke-width 2.2 for crisp browser tab visibility) -->
+  <g transform="translate(5.5, 5.5) scale(0.875)"
+     fill="none"
+     stroke="#ffffff"
+     stroke-width="2.2"
+     stroke-linecap="round"
+     stroke-linejoin="round">
+    <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z" />
+    <path d="M12 8v4" />
+    <path d="M12 16h.01" />
+  </g>
 </svg>

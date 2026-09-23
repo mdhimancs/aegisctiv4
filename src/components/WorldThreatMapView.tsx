@@ -605,15 +605,15 @@ Raw Hex Sample: ${selectedNode.hexSample || '45 00 00 e4 2b c0 40 00'}
         <div className="lg:col-span-6 flex flex-col gap-2">
           
           {/* Tactical Layers (Relocated to Top) & Regions & Live Status */}
-          <div className="flex flex-wrap items-center gap-1.5 bg-white border border-slate-200 rounded-lg p-1 shadow-xs">
-            <div className="flex items-center gap-1 border-r border-slate-200 pr-1.5 mr-0.5">
-              <span className="text-[9.5px] font-mono font-bold text-slate-500 flex items-center gap-1 mr-0.5 uppercase tracking-wider">
+          <div className="flex items-center justify-between gap-1 bg-white border border-slate-200 rounded-lg p-1 shadow-xs overflow-x-auto">
+            <div className="flex items-center gap-1 border-r border-slate-200 pr-1.5 mr-0.5 shrink-0">
+              <span className="text-[9px] font-mono font-bold text-slate-500 flex items-center gap-1 mr-0.5 uppercase tracking-wider">
                 <Layers className="w-3 h-3 text-slate-400" />
                 LAYERS:
               </span>
               <button 
                 onClick={() => setShowArcs(!showArcs)} 
-                className={`px-2 py-0.5 rounded text-[9.5px] font-mono border transition-all ${
+                className={`px-1.5 py-0.5 rounded text-[9px] font-mono border transition-all ${
                   showArcs 
                     ? 'bg-red-50 text-red-700 border-red-200 font-bold shadow-xs' 
                     : 'bg-slate-50 text-slate-600 border-slate-200 hover:bg-slate-100'
@@ -623,7 +623,7 @@ Raw Hex Sample: ${selectedNode.hexSample || '45 00 00 e4 2b c0 40 00'}
               </button>
               <button 
                 onClick={() => setShowOrigins(!showOrigins)} 
-                className={`px-2 py-0.5 rounded text-[9.5px] font-mono border transition-all ${
+                className={`px-1.5 py-0.5 rounded text-[9px] font-mono border transition-all ${
                   showOrigins 
                     ? 'bg-red-50 text-red-700 border-red-200 font-bold shadow-xs' 
                     : 'bg-slate-50 text-slate-600 border-slate-200 hover:bg-slate-100'
@@ -633,7 +633,7 @@ Raw Hex Sample: ${selectedNode.hexSample || '45 00 00 e4 2b c0 40 00'}
               </button>
               <button 
                 onClick={() => setShowVictims(!showVictims)} 
-                className={`px-2 py-0.5 rounded text-[9.5px] font-mono border transition-all ${
+                className={`px-1.5 py-0.5 rounded text-[9px] font-mono border transition-all ${
                   showVictims 
                     ? 'bg-emerald-50 text-emerald-700 border-emerald-200 font-bold shadow-xs' 
                     : 'bg-slate-50 text-slate-600 border-slate-200 hover:bg-slate-100'
@@ -643,7 +643,7 @@ Raw Hex Sample: ${selectedNode.hexSample || '45 00 00 e4 2b c0 40 00'}
               </button>
               <button 
                 onClick={() => setShowCables(!showCables)} 
-                className={`px-2 py-0.5 rounded text-[9.5px] font-mono border transition-all ${
+                className={`px-1.5 py-0.5 rounded text-[9px] font-mono border transition-all ${
                   showCables 
                     ? 'bg-cyan-50 text-cyan-700 border-cyan-200 font-bold shadow-xs' 
                     : 'bg-slate-50 text-slate-600 border-slate-200 hover:bg-slate-100'
@@ -653,8 +653,8 @@ Raw Hex Sample: ${selectedNode.hexSample || '45 00 00 e4 2b c0 40 00'}
               </button>
             </div>
 
-            <div className="flex items-center gap-1 border-r border-slate-200 pr-1.5 mr-0.5">
-              <span className="text-[9.5px] font-mono font-bold text-slate-500 flex items-center gap-1 mr-0.5 uppercase tracking-wider">
+            <div className="flex items-center gap-1 border-r border-slate-200 pr-1.5 mr-0.5 shrink-0">
+              <span className="text-[9px] font-mono font-bold text-slate-500 flex items-center gap-1 mr-0.5 uppercase tracking-wider">
                 <Globe2 className="w-3 h-3 text-slate-400" />
                 FOCUS:
               </span>
@@ -662,7 +662,7 @@ Raw Hex Sample: ${selectedNode.hexSample || '45 00 00 e4 2b c0 40 00'}
                 <button
                   key={r}
                   onClick={() => setSelectedRegion(r)}
-                  className={`w-[68px] py-0.5 rounded text-[9.5px] font-mono border transition-all uppercase text-center cursor-pointer ${
+                  className={`px-1.5 py-0.5 rounded text-[9px] font-mono border transition-all uppercase text-center cursor-pointer ${
                     selectedRegion === r
                       ? 'bg-blue-600 text-white font-bold border-blue-700 shadow-xs'
                       : 'bg-slate-50 text-slate-600 border-slate-200 hover:bg-slate-100'
@@ -673,21 +673,21 @@ Raw Hex Sample: ${selectedNode.hexSample || '45 00 00 e4 2b c0 40 00'}
               ))}
             </div>
 
-            <div className="flex items-center gap-1.5 ml-auto">
+            <div className="flex items-center gap-1 ml-auto shrink-0">
               <button 
                 onClick={() => setShowTerminator(!showTerminator)} 
-                className={`flex items-center gap-1 px-2 py-0.5 rounded text-[9.5px] font-mono border transition-all ${
+                className={`flex items-center gap-0.5 px-1.5 py-0.5 rounded text-[8.5px] font-mono border transition-all shrink-0 cursor-pointer ${
                   showTerminator ? 'bg-blue-600 text-white border-blue-700 font-bold shadow-xs' : 'bg-slate-50 text-slate-600 border-slate-200 hover:bg-slate-100'
                 }`}
                 title="Toggle Day / Night Terminator on Globe"
               >
-                <div className="w-1.5 h-1.5 rounded-full bg-current opacity-50" />
-                🌗 {showTerminator ? 'NIGHT' : 'DAY'}
+                <span className="text-[9px] leading-none">🌗</span>
+                <span>{showTerminator ? 'NIGHT' : 'DAY'}</span>
               </button>
 
               <button 
                 onClick={() => setIsMapCollapsed(!isMapCollapsed)}
-                className="p-1 rounded hover:bg-slate-100 text-slate-500 transition-colors"
+                className="p-0.5 rounded hover:bg-slate-100 text-slate-500 transition-colors shrink-0"
                 title={isMapCollapsed ? "Expand Map" : "Collapse Map"}
               >
                 {isMapCollapsed ? <ChevronDown className="w-3.5 h-3.5" /> : <ChevronUp className="w-3.5 h-3.5" />}

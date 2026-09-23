@@ -160,6 +160,14 @@ export const Header: React.FC<HeaderProps> = ({
 
     // 2. INVESTIGATING THE THREAT (Deep Analysis, Attribution & TTPs)
     {
+      id: 'cti-dashboard' as ActiveTab,
+      label: 'CTI Dashboard',
+      subtitle: 'Executive Intel & Campaigns',
+      icon: Compass,
+      badge: `${campaignCount} Ops`,
+      phase: 'Investigate'
+    },
+    {
       id: 'iocs' as ActiveTab,
       label: 'Threat Graph & IOCs',
       subtitle: 'Verdicts & Detonation',
@@ -216,14 +224,6 @@ export const Header: React.FC<HeaderProps> = ({
       subtitle: 'Agentic DFIR & Triage',
       icon: Brain,
       isSpecial: true,
-      phase: 'Report'
-    },
-    {
-      id: 'cti-dashboard' as ActiveTab,
-      label: 'CTI Dashboard',
-      subtitle: 'Executive Intel & Campaigns',
-      icon: Compass,
-      badge: `${campaignCount} Ops`,
       phase: 'Report'
     }
   ];
@@ -465,7 +465,7 @@ export const Header: React.FC<HeaderProps> = ({
       </div>
 
       {/* Navigation Suite Rail */}
-      <nav className="px-2 flex items-center gap-0.5 overflow-x-auto border-t border-slate-200 scrollbar-none py-0.5 bg-slate-50">
+      <nav className="px-2 flex items-center gap-0.5 overflow-x-auto border-t border-slate-200 scrollbar-none py-1.5 bg-slate-50">
         {tabs.map((tab, idx) => {
           const Icon = tab.icon;
           const isActive = activeTab === tab.id;
@@ -474,12 +474,17 @@ export const Header: React.FC<HeaderProps> = ({
 
           return (
             <React.Fragment key={tab.id}>
-              {isNewPhase && (
-                <div className="h-3.5 w-px bg-slate-300 mx-0.5 shrink-0" aria-hidden="true" />
+              {idx > 0 && (
+                <div
+                  className={`h-3.5 w-px shrink-0 ${
+                    isNewPhase ? 'bg-slate-300 mx-1' : 'bg-slate-200 mx-0.5'
+                  }`}
+                  aria-hidden="true"
+                />
               )}
               <button
                 onClick={() => setActiveTab(tab.id)}
-                className={`flex items-center gap-1.5 px-2 py-1.5 border-b-2 text-xs whitespace-nowrap transition-all cursor-pointer ${
+                className={`flex items-center gap-1.5 px-2.5 py-2 border-b-2 text-xs whitespace-nowrap transition-all cursor-pointer ${
                   isActive
                     ? 'border-red-600 text-red-600 font-bold'
                     : 'border-transparent text-slate-500 hover:text-slate-900 hover:border-slate-300'

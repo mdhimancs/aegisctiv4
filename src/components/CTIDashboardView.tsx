@@ -248,8 +248,8 @@ export const CTIDashboardView: React.FC<CTIDashboardViewProps> = ({
 
       {/* Main CTI Layout: Left Half (Frontline Campaign Ops Central) & Right Half (Attribution, TTPs, Targeted Industry) */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-3 items-start">
-        {/* Left Half (5 cols): Frontline Campaign Operations Central (4-column card grid) */}
-        <div className="lg:col-span-5 bg-slate-50 border border-slate-200 rounded-2xl p-3 shadow-xs space-y-2">
+        {/* First Section (7 cols): Frontline Campaign Operations Central */}
+        <div className="lg:col-span-7 bg-slate-50 border border-slate-200 rounded-2xl p-3 shadow-xs space-y-2">
           {/* Filter Controls Bar */}
           <div className="flex flex-wrap items-center justify-between gap-2 pb-2.5 border-b border-slate-200">
             <div>
@@ -351,8 +351,8 @@ export const CTIDashboardView: React.FC<CTIDashboardViewProps> = ({
           </div>
         </div>
 
-        {/* Right Half: Geopolitical Attribution, Stacked boxes (2. TTP Dominance, 3. Targeted Industry Exposure) */}
-        <div className="lg:col-span-7 grid grid-cols-1 lg:grid-cols-2 gap-3">
+        {/* Middle/Right Section: Geopolitical Attribution, Stacked boxes */}
+        <div className="lg:col-span-5 grid grid-cols-1 lg:grid-cols-1 gap-3">
           {/* 1. Geopolitical Threat Attribution Matrix */}
           <div className="bg-slate-50 border border-slate-200 rounded-2xl p-3 shadow-xs space-y-2">
             <div className="flex items-center justify-between pb-4 border-b border-slate-200">
